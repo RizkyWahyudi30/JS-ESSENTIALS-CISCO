@@ -117,3 +117,59 @@ const k = true;
 
 console.log((a && b && j) || k); // -> true
 console.log(a && b && (j || k)); // -> false
+
+//
+//
+// Logical operators and non-Boolean values
+// First, the operand is temporarily converted to a Boolean value (according to the rules explained in the previous chapter) and only then it is treated with the appropriate operator action (i.e. a true value is converted to false, and vice versa). Therefore, the NOT operator will always return either false or true. Often, double negation is used to convert any type to Boolean.
+let nr = 0;
+let year2 = 1970;
+let name2 = "Alice";
+let empty = "";
+
+console.log(!nr); // -> true
+console.log(!year2); // -> false
+console.log(!name2); // -> false
+console.log(!empty); // -> true
+
+console.log(!!nr); // -> false
+console.log(!!name2); // -> true
+
+// The AND operator will return the first operand if it evaluates to false, and the second operand otherwise. The OR operator will return its first operand if it evaluates to true, and the second operand otherwise. Evaluation is simply an attempt to convert an operand to a Boolean-type value (again, according to the rules learned in the previous chapter).
+
+console.log(true && 1991); // -> 1991
+console.log(false && 1991); // -> false
+console.log(2 && 5); // -> 5
+console.log(0 && 5); // -> 0
+console.log("Alice" && "Bob"); // -> Bob
+console.log("" && "Bob"); // -> empty string
+
+console.log(true || 1991); // -> true
+console.log(false || 1991); // -> 1991
+console.log(2 || 5); // -> 2
+console.log(0 || 5); // -> 5
+console.log("Alice" || "Bob"); // -> Alice
+console.log("" || "Bob"); // -> Bob
+// Both operators also use short-circuit evaluation.
+
+let x2 = 0;
+let y2 = 0;
+console.log(x2++ && y2++); // -> 0
+console.log(x2); // -> 1
+console.log(y2); // -> y == 0
+
+//
+//
+// Compound Assignment Operators
+// Just like arithmetic operators, binary logical operators can be used in combination with the assignment operator, creating a logical AND assignment &&= and a logical OR assignment ||=.
+let f = true;
+console.log(f); // -> true
+f &&= false;
+console.log(f); // -> false
+// The instruction a &&= false means exactly the same as a = a && false.
+
+let g = false;
+console.log(g); // -> false
+g ||= true;
+console.log(g); // -> true
+// This time, the operation b ||= true is interpreted as b = b || true.
