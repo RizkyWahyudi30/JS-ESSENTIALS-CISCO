@@ -70,17 +70,17 @@ console.log(dec);
 let c = 10;
 
 c += 2;
-console.log(x); // -> 12
+console.log(c); // -> 12
 c -= 4;
-console.log(x); // -> 8
+console.log(c); // -> 8
 c *= 3;
-console.log(x); // -> 24
+console.log(c); // -> 24
 c /= 6;
-console.log(x); // -> 4
+console.log(c); // -> 4
 c **= 3;
-console.log(x); // -> 64
+console.log(c); // -> 64
 c %= 10;
-console.log(x); // -> 4
+console.log(c); // -> 4
 
 //
 //
